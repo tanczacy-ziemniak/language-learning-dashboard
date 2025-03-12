@@ -1,0 +1,336 @@
+.contentManager {
+  padding: 20px 0;
+}
+
+.header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  color: #3498db;
+}
+
+.tab.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+  font-weight: 600;
+}
+
+.topicForm, .quizForm {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.formGroup input, .formGroup textarea, .formGroup select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus, .formGroup textarea:focus, .formGroup select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.sectionContainer, .questionContainer {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin: 30px 0 15px;
+  color: #2c3e50;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #3498db;
+}
+
+.addButton, .removeButton, .saveButton, .addSmallButton, .removeSmallButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.addButton {
+  background-color: #27ae60;
+  color: white;
+  margin-right: 10px;
+}
+
+.addButton:hover {
+  background-color: #219653;
+}
+
+.addSmallButton {
+  background-color: #27ae60;
+  color: white;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+.removeButton {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.removeButton:hover {
+  background-color: #c0392b;
+}
+
+.removeSmallButton {
+  background-color: #e74c3c;
+  color: white;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.saveButton {
+  background-color: #3498db;
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+}
+
+.saveButton:hover {
+  background-color: #2980b9;
+}
+
+.formActions {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.optionsContainer {
+  margin-bottom: 20px;
+}
+
+.optionGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.optionGroup input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.optionGroup label {
+  display: flex;
+  align-items: center;
+  width: 80px;
+  margin: 0;
+}
+
+.optionGroup input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+.matchingContainer {
+  margin-bottom: 20px;
+}
+
+.pairGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pairGroup input {
+  flex: 1;
+}
+
+.pairArrow {
+  margin: 0 10px;
+  color: #3498db;
+  font-weight: bold;
+}
+
+.topicList {
+  margin-top: 40px;
+}
+
+.topicList h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.noTopics {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 30px 0;
+}
+
+.topicsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.topicCard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardIcon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cardLevel {
+  display: inline-block;
+  background-color: #f1f1f1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.topicCard h3 {
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.topicCard p {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.cardStats {
+  display: flex;
+  justify-content: space-between;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  border-top: 1px solid #f1f1f1;
+  padding-top: 10px;
+}
+
+.cardActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cardActions button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cardActions button:hover {
+  background-color: #2980b9;
+}
+
+.cardActions .deleteButton {
+  background-color: #e74c3c;
+}
+
+.cardActions .deleteButton:hover {
+  background-color: #c0392b;
+}
+
+.navigation {
+  margin-top: 40px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .topicsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pairGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .pairArrow {
+    margin: 5px 0;
+  }
+}

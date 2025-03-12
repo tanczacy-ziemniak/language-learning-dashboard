@@ -1,0 +1,111 @@
+.quizPage {
+  padding: 20px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.progress {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.questionCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Quiz Results Styles */
+.quizResults {
+  text-align: center;
+  padding: 20px 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quizResults h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.scoreCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.scoreHeader {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+}
+
+.scoreHeader h3 {
+  margin: 0;
+}
+
+.scoreBody {
+  padding: 30px;
+}
+
+.scoreCircle {
+  width: 120px;
+  height: 120px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.scoreNumber {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.scoreTotal {
+  font-size: 1.5rem;
+  color: #7f8c8d;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.scorePercentage {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.scoreMessage {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.actions {
+  padding: 20px;
+  border-top: 1px solid #f1f1f1;
+}
