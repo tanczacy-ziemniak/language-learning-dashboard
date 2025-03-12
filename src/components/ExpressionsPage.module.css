@@ -1,0 +1,113 @@
+.expressionsPage {
+  padding: 20px 0;
+}
+
+.header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.search input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+}
+
+.count {
+  margin-right: 20px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  white-space: nowrap;
+}
+
+.expressionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.expressionCard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.expressionPolish {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.expressionEnglish {
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.expressionNotes {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f1f1f1;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search, .count {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .expressionsGrid {
+    grid-template-columns: 1fr;
+  }
+}

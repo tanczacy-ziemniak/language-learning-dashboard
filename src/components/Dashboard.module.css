@@ -18,70 +18,277 @@
   color: #7f8c8d;
 }
 
-.progressSection {
+.statsSection {
   margin-bottom: 40px;
 }
 
-.progressSection h2 {
+.statsSection h2 {
   margin-bottom: 20px;
   color: #2c3e50;
   border-bottom: 2px solid #3498db;
   padding-bottom: 10px;
 }
 
-.progressStats {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-.stat {
-  text-align: center;
-  padding: 15px;
-}
-
-.statNumber {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #3498db;
-}
-
-.statLabel {
-  font-size: 1rem;
-  color: #7f8c8d;
-}
-
-.topicsSection h2 {
-  margin-bottom: 20px;
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 10px;
-}
-
-.topicsGrid {
+.statsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.recommendationsSection {
-  margin-top: 40px;
+.statCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.recommendationsSection h2 {
+.statCard:hover {
+  transform: translateY(-5px);
+}
+
+.statIcon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.statTitle {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.statSubtext {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.statLink {
+  display: inline-block;
+  margin-top: 10px;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.statLink:hover {
+  text-decoration: underline;
+}
+
+.quizSection {
+  margin-bottom: 40px;
+}
+
+.quizSection h2 {
   margin-bottom: 20px;
   color: #2c3e50;
   border-bottom: 2px solid #3498db;
   padding-bottom: 10px;
 }
 
+.quizCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.quizCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.quizCard:hover {
+  transform: translateY(-5px);
+}
+
+.quizCard h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.quizCard p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.wrongAnswersSection {
+  margin-bottom: 40px;
+}
+
+.wrongAnswersSection h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.reviewCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.reviewCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.reviewCard h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.reviewList {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.reviewItem {
+  padding: 10px;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewPolish {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.reviewEnglish {
+  color: #3498db;
+  margin: 5px 0;
+}
+
+.reviewCount {
+  font-size: 0.8rem;
+  color: #e74c3c;
+}
+
+.addContentSection {
+  margin-bottom: 30px;
+}
+
+.addContentSection h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.addButtons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.addButtons a {
+  flex: 1;
+  text-align: center;
+  min-width: 150px;
+}
+
+.backupSection {
+  margin-bottom: 40px;
+}
+
+.backupSection h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.backupCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.backupCard p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.backupButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.exportButton, .importButton {
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+.exportButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.exportButton:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.exportButton:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.importWrapper {
+  position: relative;
+}
+
+.fileInput {
+  display: none;
+}
+
+.importButton {
+  background-color: #2ecc71;
+  color: white;
+  display: inline-block;
+  text-align: center;
+}
+
+.importButton:hover {
+  background-color: #27ae60;
+}
+
 @media (max-width: 768px) {
-  .progressStats {
-    flex-direction: column;
+  .statsGrid {
+    grid-template-columns: 1fr;
   }
   
-  .topicsGrid {
+  .quizCards {
     grid-template-columns: 1fr;
+  }
+  
+  .reviewCards {
+    grid-template-columns: 1fr;
+  }
+  
+  .backupButtons {
+    flex-direction: column;
+    align-items: center;
   }
 }

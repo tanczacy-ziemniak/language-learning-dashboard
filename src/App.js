@@ -1,8 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './components/Dashboard';
+import WordsPage from './components/WordsPage';
+import ExpressionsPage from './components/ExpressionsPage';
+import NotesPage from './components/NotesPage';
 import QuizPage from './components/QuizPage';
-import TopicPage from './components/TopicPage';
 import ContentManager from './components/ContentManager';
 import NotFound from './components/NotFound';
 import './App.css';
@@ -18,8 +20,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
-          <Route path="topics/:topicId" element={<TopicPage />} />
-          <Route path="quiz/:topicId" element={<QuizPage />} />
+          <Route path="words" element={<WordsPage />} />
+          <Route path="expressions" element={<ExpressionsPage />} />
+          <Route path="notes" element={<NotesPage />} />
+          <Route path="quiz" element={<QuizPage />} />
           <Route path="content-manager" element={<ContentManager />} />
           <Route path="*" element={<NotFound />} />
         </Route>
