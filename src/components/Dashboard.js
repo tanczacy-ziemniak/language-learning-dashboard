@@ -46,7 +46,7 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboard}>
       <div className={styles.header}>
-        <h1>Polish Learning Dashboard</h1>
+        <h1>Polish Learning Dashboard 🥔</h1>
         <p>Track your progress and take quizzes to improve your Polish language skills</p>
       </div>
 
@@ -79,9 +79,9 @@ const Dashboard = () => {
       </div>
 
       <div className={styles.backupSection}>
-        <h2>데이터 백업 및 복원</h2>
+        <h2>Data Backup / Restore</h2>
         <div className={styles.backupCard}>
-          <p>모든 학습 데이터(단어, 표현, 스트릭, 노트 등)을 한 번에 백업하거나 복원할 수 있습니다.</p>
+          <p>You can export or import all your learning data (words, expressions, streak, notes, etc.) at once.</p>
           
           <div className={styles.backupButtons}>
             <button 
@@ -89,7 +89,7 @@ const Dashboard = () => {
               onClick={exportAllData}
               disabled={words.length === 0 && expressions.length === 0}
             >
-              모든 데이터 내보내기
+              Export All Data
             </button>
             
             <div className={styles.importWrapper}>
@@ -102,7 +102,7 @@ const Dashboard = () => {
                 className={styles.fileInput}
               />
               <label htmlFor="import-all-data" className={styles.importButton}>
-                데이터 가져오기
+                Import All Data
               </label>
             </div>
           </div>

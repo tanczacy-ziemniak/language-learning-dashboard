@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logo}>
-        <Link to="/">Polish Learning</Link>
+        <Link to="/">Polish Learning🥔</Link>
       </div>
       <nav className={styles.nav}>
         <ul>
@@ -18,6 +18,7 @@ const Sidebar = () => {
               end 
               className={({ isActive }) => isActive ? styles.active : ''}
             >
+              <span className={styles.icon}>🥔</span>
               Dashboard
             </NavLink>
           </li>
@@ -75,9 +76,8 @@ const Sidebar = () => {
             alt="Creator animation" 
             className={styles.creatorGif}
           />
-          <p className={styles.creatorText}>made by tanczacy_ziemniak</p>
         </div>
-        <p>© {new Date().getFullYear()} Polish Learning</p>
+        <p>© {new Date().getFullYear()} tanczacy_ziemniak</p>
       </div>
     </aside>
   );
