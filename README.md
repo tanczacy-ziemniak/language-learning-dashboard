@@ -4,7 +4,7 @@ A comprehensive web application designed to help users learn new languages throu
 
 
 ## Demo
-![](https://github.com/tanczacy-ziemniak/language-learning-dashboard/demo.gif)
+![Alt Text](https://github.com/tanczacy-ziemniak/language-learning-dashboard/blob/main/demo.gif)
 
 
 ## Features
