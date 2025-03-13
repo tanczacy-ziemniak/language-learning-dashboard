@@ -2,7 +2,10 @@
 
 A comprehensive web application designed to help users learn new languages through an interactive dashboard, vocabulary management, and quiz functionality.
 
-![Language Learning Dashboard Screenshot](screenshot.png)
+
+## Demo
+![](https://github.com/tanczacy-ziemniak/language-learning-dashboard/demo.gif)
+
 
 ## Features
 
@@ -24,7 +27,7 @@ A comprehensive web application designed to help users learn new languages throu
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/language-learning-dashboard.git
+   git clone https://github.com/tanczacy-ziemniak/language-learning-dashboard.git
    ```
 
 2. Navigate to the project directory:
@@ -60,9 +63,8 @@ Create and manage study notes for grammar rules, cultural insights, or any other
 
 ### Quiz
 Test your knowledge with different quiz types:
-- Translation quizzes
-- Multiple choice questions
-- Fill in the blanks
+- Multiple choice questions 
+
 
 ### Content Manager
 Organize all your learning materials by categories, difficulty levels, or custom tags.
