@@ -10,12 +10,12 @@
 .header h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #2c3e50;
+  color: #5D4037;  /* Dark brown */
 }
 
 .header p {
   font-size: 1.1rem;
-  color: #7f8c8d;
+  color: #8D6E63;  /* Medium brown */
 }
 
 .statsSection {
@@ -24,8 +24,8 @@
 
 .statsSection h2 {
   margin-bottom: 20px;
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
+  color: #5D4037;  /* Dark brown */
+  border-bottom: 2px solid #A67C52;  /* Potato brown */
   padding-bottom: 10px;
 }
 
@@ -62,19 +62,19 @@
 .statNumber {
   font-size: 3rem;
   font-weight: bold;
-  color: #3498db;
+  color: #A67C52;  /* Potato brown */
   margin-bottom: 10px;
 }
 
 .statSubtext {
-  color: #7f8c8d;
+  color: #8D6E63;  /* Medium brown */
   font-size: 0.9rem;
 }
 
 .statLink {
   display: inline-block;
   margin-top: 10px;
-  color: #3498db;
+  color: #A67C52;  /* Potato brown */
   text-decoration: none;
 }
 
@@ -88,8 +88,8 @@
 
 .quizSection h2 {
   margin-bottom: 20px;
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
+  color: #5D4037;  /* Dark brown */
+  border-bottom: 2px solid #A67C52;  /* Potato brown */
   padding-bottom: 10px;
 }
 
@@ -127,8 +127,8 @@
 
 .wrongAnswersSection h2 {
   margin-bottom: 20px;
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
+  color: #5D4037;  /* Dark brown */
+  border-bottom: 2px solid #A67C52;  /* Potato brown */
   padding-bottom: 10px;
 }
 
@@ -169,7 +169,7 @@
 }
 
 .reviewEnglish {
-  color: #3498db;
+  color: #A67C52;  /* Potato brown */
   margin: 5px 0;
 }
 
@@ -184,8 +184,8 @@
 
 .addContentSection h2 {
   margin-bottom: 20px;
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
+  color: #5D4037;  /* Dark brown */
+  border-bottom: 2px solid #A67C52;  /* Potato brown */
   padding-bottom: 10px;
 }
 
@@ -207,8 +207,8 @@
 
 .backupSection h2 {
   margin-bottom: 20px;
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
+  color: #5D4037;  /* Dark brown */
+  border-bottom: 2px solid #A67C52;  /* Potato brown */
   padding-bottom: 10px;
 }
 
@@ -241,13 +241,13 @@
 }
 
 .exportButton {
-  background-color: #3498db;
+  background-color: #A67C52;  /* Potato brown */
   color: white;
   border: none;
 }
 
 .exportButton:hover:not(:disabled) {
-  background-color: #2980b9;
+  background-color: #8B5A2B;  /* Darker potato brown */
 }
 
 .exportButton:disabled {
@@ -264,14 +264,14 @@
 }
 
 .importButton {
-  background-color: #2ecc71;
+  background-color: #8D6E63;  /* Medium brown */
   color: white;
   display: inline-block;
   text-align: center;
 }
 
 .importButton:hover {
-  background-color: #27ae60;
+  background-color: #6D4C41;  /* Darker medium brown */
 }
 
 @media (max-width: 768px) {

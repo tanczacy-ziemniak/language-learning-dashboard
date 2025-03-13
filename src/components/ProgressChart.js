@@ -22,7 +22,7 @@ const ProgressChart = ({ percentage }) => {
             cy="60"
             r="45"
             fill="none"
-            stroke="#3498db"
+            stroke="#A67C52"  /* Changed to potato brown */
             strokeWidth="10"
             strokeDasharray={dashArray}
             strokeDashoffset={dashOffset}

@@ -15,21 +15,21 @@
 }
 
 .btn-primary {
-  background-color: #4a90e2;
+  background-color: #A67C52;  /* Potato brown */
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #357ABD;
+  background-color: #8B5A2B;  /* Darker potato brown */
 }
 
 .btn-secondary {
-  background-color: #f1f1f1;
-  color: #333;
+  background-color: #E8DBC5;  /* Light potato skin */
+  color: #5D4037;  /* Dark brown text */
 }
 
 .btn-secondary:hover {
-  background-color: #ddd;
+  background-color: #D7C8A3;  /* Slightly darker potato skin */
 }
 
 .card {
