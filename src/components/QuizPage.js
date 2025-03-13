@@ -176,7 +176,6 @@ const QuizPage = () => {
               </div>
               
               <div className={styles.questionContainer}>
-                <h2>What does this mean in English?</h2>
                 <div className={styles.polishWord}>{currentQuestion.question}</div>
                 
                 <div className={styles.options}>
