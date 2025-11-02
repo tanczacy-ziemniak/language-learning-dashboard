@@ -155,7 +155,7 @@ const QuizPage = () => {
             <div className={styles.notEnoughData}>
               <h2>{currentQuestion?.question}</h2>
               <p>
-                Go to <a href="/content-manager">Content Manager</a> to add more {quizType}s.
+                Go to <a href="content-manager">Content Manager</a> to add more {quizType}s.
               </p>
             </div>
           ) : currentQuestion ? (

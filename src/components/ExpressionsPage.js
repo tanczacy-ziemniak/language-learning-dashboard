@@ -73,11 +73,8 @@ const ExpressionsPage = () => {
 
       {expressions.length === 0 ? (
         <div className="card">
-          <h3>No Expressions Yet</h3>
-          <p>Start adding Polish expressions to your collection!</p>
-          <Link to="/content-manager?tab=expression" className="btn btn-primary">
-            Add Your First Expression
-          </Link>
+          <h3>No Contents</h3>
+          <p>Start adding Polish expressions!</p>
         </div>
       ) : (
         <>

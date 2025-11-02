@@ -24,7 +24,7 @@ function App() {
           <Route path="expressions" element={<ExpressionsPage />} />
           <Route path="notes" element={<NotesPage />} />
           <Route path="quiz" element={<QuizPage />} />
-          <Route path="content-manager" element={<ContentManager />} />
+          <Route path="/content-manager" element={<ContentManager />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
