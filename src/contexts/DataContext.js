@@ -3,15 +3,11 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 // Create the context with a default empty value
 const DataContext = createContext({
   words: [],
-  expressions: [],
   notes: '',
   streak: 0,
   lastUsedDate: null,
-  wrongAnswers: { words: [], expressions: [] },
   addWord: () => {},
-  addExpression: () => {},
   deleteWord: () => {},
-  deleteExpression: () => {},
   saveNotes: () => {},
   updateWrongAnswers: () => {},
   exportAllData: () => {},
@@ -26,14 +22,11 @@ export const useData = () => {
   }
   return context;
 };
-
 export const DataProvider = ({ children }) => {
   const [words, setWords] = useState([]);
-  const [expressions, setExpressions] = useState([]);
   const [notes, setNotes] = useState('');
   const [streak, setStreak] = useState(0);
   const [lastUsedDate, setLastUsedDate] = useState(null);
-  const [wrongAnswers, setWrongAnswers] = useState({ words: [], expressions: [] });
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Load initial data
@@ -46,10 +39,6 @@ export const DataProvider = ({ children }) => {
       }
       
       // Load expressions
-      const savedExpressions = localStorage.getItem('polish-expressions');
-      if (savedExpressions) {
-        setExpressions(JSON.parse(savedExpressions));
-      }
       
       // Load notes
       const savedNotes = localStorage.getItem('polish-notes');
@@ -85,11 +74,6 @@ export const DataProvider = ({ children }) => {
     }
   }, [words, isLoaded]);
   
-  useEffect(() => {
-    if (isLoaded) {
-      localStorage.setItem('polish-expressions', JSON.stringify(expressions));
-    }
-  }, [expressions, isLoaded]);
   
   useEffect(() => {
     if (isLoaded) {
@@ -211,7 +195,6 @@ export const DataProvider = ({ children }) => {
         });
       }
     });
-    
     // Sort by count (highest first)
     currentWrongAnswers.sort((a, b) => b.count - a.count);
     
@@ -243,13 +226,9 @@ export const DataProvider = ({ children }) => {
     link.href = url;
     link.download = fileName;
     link.click();
-    
-    // Clean up
-    URL.revokeObjectURL(url);
   };
   
   // Import all data function
-  const importAllData = (jsonData) => {
     try {
       const parsedData = JSON.parse(jsonData);
       
@@ -258,23 +237,19 @@ export const DataProvider = ({ children }) => {
         throw new Error('Invalid format: Missing or invalid words data');
       }
       
-      if (!parsedData.expressions || !Array.isArray(parsedData.expressions)) {
-        throw new Error('Invalid format: Missing or invalid expressions data');
-      }
+      // ...expressions validation removed...
       
       // Import the data
-      setWords(parsedData.words || []);
-      setExpressions(parsedData.expressions || []);
+  setWords(parsedData.words || []);
       
       if (parsedData.streak) {
         setStreak(parsedData.streak.streak || 0);
         setLastUsedDate(parsedData.streak.lastUsed ? new Date(parsedData.streak.lastUsed) : null);
       }
-      
       setWrongAnswers(parsedData.wrongAnswers || { words: [], expressions: [] });
       
       setNotes(parsedData.notes || '');
-      
+
       return true;
     } catch (error) {
       console.error("Data import error:", error);
@@ -285,15 +260,12 @@ export const DataProvider = ({ children }) => {
   // Context value
   const value = {
     words,
-    expressions,
     notes,
     streak,
     lastUsedDate,
     wrongAnswers,
     addWord,
-    addExpression,
     deleteWord,
-    deleteExpression,
     saveNotes,
     updateWrongAnswers,
     exportAllData,
@@ -305,4 +277,4 @@ export const DataProvider = ({ children }) => {
       {children}
     </DataContext.Provider>
   );
-};
+
