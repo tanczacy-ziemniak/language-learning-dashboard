@@ -174,8 +174,19 @@ const QuizPage = () => {
               <div className={styles.questionContainer}>
                 <div className={styles.polishWord}>
                   {currentQuestion.answerType === 'polish'
-                    ? `Write the Polish word for: "${currentQuestion.question}"`
-                    : `Write the meaning of: "${currentQuestion.question}"`}
+                    ? (
+                      <>
+                        Write the Polish vocabulary:<br />
+                        <span className={styles.questionText}>{currentQuestion.question}</span>
+                      </>
+                    )
+                    : (
+                      <>
+                        Write the meaning:<br />
+                        <span className={styles.questionText}>{currentQuestion.question}</span>
+                      </>
+                    )
+                  }
                 </div>
                 <form onSubmit={handleSubmitAnswer} className={styles.answerForm}>
                   <input
@@ -186,14 +197,17 @@ const QuizPage = () => {
                     className={styles.answerInput}
                     autoFocus
                   />
+                  {/* 버튼을 input 아래에 배치, 마진 클래스 추가 */}
                   {!isChecking && (
-                    <button
-                      type="submit"
-                      className={styles.submitButton}
-                      disabled={!selectedAnswer.trim()}
-                    >
-                      Submit
-                    </button>
+                    <div>
+                      <button
+                        type="submit"
+                        className={`${styles.submitButton} ${styles.submitButtonMargin}`}
+                        disabled={!selectedAnswer.trim()}
+                      >
+                        Submit
+                      </button>
+                    </div>
                   )}
                 </form>
                 {isChecking && (
