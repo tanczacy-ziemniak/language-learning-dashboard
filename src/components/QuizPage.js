@@ -13,7 +13,7 @@ const QuizPage = () => {
   const [quizType, setQuizType] = useState(initialQuizType);
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [selectedAnswer, setSelectedAnswer] = useState('');
   const [isChecking, setIsChecking] = useState(false);
   const [isCorrect, setIsCorrect] = useState(null);
   const [quizCompleted, setQuizCompleted] = useState(false);
@@ -28,47 +28,39 @@ const QuizPage = () => {
   // Prepare quiz questions
   const prepareQuiz = useCallback(() => {
     const items = quizType === 'word' ? words : expressions;
-    
-    // We need at least 4 items for a meaningful quiz
-    if (items.length < 4) {
+
+    // 퀴즈 타입별 최소 아이템 개수 조건
+    const minItems = quizType === 'word' ? 1 : 4;
+    if (items.length < minItems) {
       setQuestions([{
         id: 'not-enough-data',
-        question: `You need at least 4 ${quizType}s to create a quiz`,
+        question: `You need at least ${minItems} item${minItems > 1 ? 's' : ''} to create a quiz`,
         correctAnswer: '',
-        options: []
+        answerType: 'polish', // default
+        itemData: null
       }]);
       return;
     }
-    
-    // Create a copy of items to shuffle
+
+    // Shuffle and select up to 10 items
     const shuffledItems = [...items].sort(() => 0.5 - Math.random());
-    
-    // Take up to 10 items for the quiz
     const selectedItems = shuffledItems.slice(0, 10);
-    
+
     const generatedQuestions = selectedItems.map(item => {
-      // Get 3 random items for wrong answers
-      const wrongAnswers = shuffledItems
-        .filter(wrongItem => wrongItem.id !== item.id)
-        .slice(0, 3)
-        .map(wrongItem => wrongItem.english);
-      
-      // Create all options (correct + wrong) and shuffle them
-      const options = [item.english, ...wrongAnswers]
-        .sort(() => 0.5 - Math.random());
-      
+      // Randomly decide answer type: 'polish' or 'english'
+      const answerType = Math.random() < 0.5 ? 'polish' : 'english';
       return {
         id: item.id,
-        question: item.polish,
-        correctAnswer: item.english,
-        options,
+        question: answerType === 'polish' ? item.english : item.polish,
+        correctAnswer: answerType === 'polish' ? item.polish : item.english,
+        answerType,
         itemData: item
       };
     });
-    
+
     setQuestions(generatedQuestions);
     setCurrentQuestionIndex(0);
-    setSelectedAnswer(null);
+    setSelectedAnswer('');
     setIsChecking(false);
     setIsCorrect(null);
     setQuizCompleted(false);
@@ -81,23 +73,27 @@ const QuizPage = () => {
     prepareQuiz();
   }, [prepareQuiz]);
   
-  const handleAnswerSelect = (answer) => {
-    if (isChecking) return;
-    
-    setSelectedAnswer(answer);
+  const handleAnswerInputChange = (e) => {
+    setSelectedAnswer(e.target.value);
+  };
+
+  const handleSubmitAnswer = (e) => {
+    e.preventDefault();
+    if (isChecking || !currentQuestion) return;
+
     setIsChecking(true);
-    
-    const correct = answer === currentQuestion.correctAnswer;
+    // 정답 비교 (공백 제거, 대소문자 무시)
+    const userAnswer = selectedAnswer.trim().toLowerCase();
+    const correctAnswer = currentQuestion.correctAnswer.trim().toLowerCase();
+    const correct = userAnswer === correctAnswer;
     setIsCorrect(correct);
-    
-    // Update score
+
     setScore(prev => ({
       ...prev,
       correct: prev.correct + (correct ? 1 : 0),
       total: prev.total + 1
     }));
-    
-    // Add to wrong answers if incorrect
+
     if (!correct) {
       setWrongItems(prev => [...prev, currentQuestion.itemData]);
     }
@@ -106,7 +102,7 @@ const QuizPage = () => {
   const handleNextQuestion = () => {
     if (currentQuestionIndex + 1 < questions.length) {
       setCurrentQuestionIndex(prev => prev + 1);
-      setSelectedAnswer(null);
+      setSelectedAnswer('');
       setIsChecking(false);
       setIsCorrect(null);
     } else {
@@ -176,34 +172,40 @@ const QuizPage = () => {
               </div>
               
               <div className={styles.questionContainer}>
-                <div className={styles.polishWord}>{currentQuestion.question}</div>
-                
-                <div className={styles.options}>
-                  {currentQuestion.options.map((option, index) => (
-                    <button
-                      key={index}
-                      className={`
-                        ${styles.optionButton}
-                        ${selectedAnswer === option ? styles.selected : ''}
-                        ${isChecking && option === currentQuestion.correctAnswer ? styles.correct : ''}
-                        ${isChecking && selectedAnswer === option && option !== currentQuestion.correctAnswer ? styles.incorrect : ''}
-                      `}
-                      onClick={() => handleAnswerSelect(option)}
-                      disabled={isChecking}
-                    >
-                      {option}
-                    </button>
-                  ))}
+                <div className={styles.polishWord}>
+                  {currentQuestion.answerType === 'polish'
+                    ? `Write the Polish word for: "${currentQuestion.question}"`
+                    : `Write the meaning of: "${currentQuestion.question}"`}
                 </div>
-                
+                <form onSubmit={handleSubmitAnswer} className={styles.answerForm}>
+                  <input
+                    type="text"
+                    value={selectedAnswer}
+                    onChange={handleAnswerInputChange}
+                    disabled={isChecking}
+                    className={styles.answerInput}
+                    autoFocus
+                  />
+                  {!isChecking && (
+                    <button
+                      type="submit"
+                      className={styles.submitButton}
+                      disabled={!selectedAnswer.trim()}
+                    >
+                      Submit
+                    </button>
+                  )}
+                </form>
                 {isChecking && (
                   <div className={`${styles.feedback} ${isCorrect ? styles.correctFeedback : styles.incorrectFeedback}`}>
                     {isCorrect ? (
                       <p>Correct! ✓</p>
                     ) : (
-                      <p>Incorrect. The correct answer is: <strong>{currentQuestion.correctAnswer}</strong></p>
+                      <p>
+                        Incorrect.<br />
+                        The correct answer is: <strong>{currentQuestion.correctAnswer}</strong>
+                      </p>
                     )}
-                    
                     <button
                       className={styles.nextButton}
                       onClick={handleNextQuestion}

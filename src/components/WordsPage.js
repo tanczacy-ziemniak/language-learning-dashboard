@@ -50,8 +50,7 @@ const WordsPage = () => {
   return (
     <div className={styles.wordsPage}>
       <div className={styles.header}>
-        <h1>Polish Words Collection</h1>
-        <p>All the Polish words you've added to your collection</p>
+        <h1>Polish Vocabulary</h1>
       </div>
 
       <div className={styles.controls}>
@@ -67,17 +66,14 @@ const WordsPage = () => {
           {filteredWords.length} {filteredWords.length === 1 ? 'word' : 'words'}
         </div>
         <Link to="/content-manager" className="btn btn-primary">
-          Add New Word
+          Add
         </Link>
       </div>
 
       {words.length === 0 ? (
         <div className="card">
-          <h3>No Words Yet</h3>
-          <p>Start adding Polish words to your collection!</p>
-          <Link to="/content-manager" className="btn btn-primary">
-            Add Your First Word
-          </Link>
+          <h3>No Contents</h3>
+          <p>Start adding a Polish vocabulary</p>
         </div>
       ) : (
         <>

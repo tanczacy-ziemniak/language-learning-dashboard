@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logo}>
-        <Link to="/">Polish Learning🥔</Link>
+        <Link to="/">Polish Learning 🥔</Link>
       </div>
       <nav className={styles.nav}>
         <ul>
@@ -28,7 +28,7 @@ const Sidebar = () => {
               className={({ isActive }) => isActive ? styles.active : ''}
             >
               <span className={styles.icon}>📚</span>
-              Words
+              Vocabulary
             </NavLink>
           </li>
           <li>

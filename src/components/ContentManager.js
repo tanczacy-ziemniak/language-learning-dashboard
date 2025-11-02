@@ -35,7 +35,7 @@ const ContentManager = () => {
 
   const validateWord = () => {
     const errors = {};
-    if (!currentWord.polish.trim()) errors.polish = "Polish word is required";
+    if (!currentWord.polish.trim()) errors.polish = "Polish vocabulary is required";
     if (!currentWord.english.trim()) errors.english = "English translation is required";
     return errors;
   };
@@ -110,7 +110,7 @@ const ContentManager = () => {
     <div className={styles.contentManager}>
       <div className={styles.header}>
         <h1>Add Polish Learning Content</h1>
-        <p>Add words and expressions to your Polish learning collection</p>
+        <p>Add vocabulary and expressions to your Polish learning collection</p>
       </div>
       
       <div className={styles.tabs}>
@@ -118,7 +118,7 @@ const ContentManager = () => {
           className={`${styles.tab} ${mode === 'word' ? styles.active : ''}`}
           onClick={() => setMode('word')}
         >
-          Add Word
+          Add Vocabulary
         </button>
         <button 
           className={`${styles.tab} ${mode === 'expression' ? styles.active : ''}`}
@@ -130,10 +130,10 @@ const ContentManager = () => {
       
       {mode === 'word' ? (
         <div className={styles.wordForm}>
-          <h2>Add New Polish Word</h2>
+          <h2>Add New Polish Vocabulary</h2>
           
           <div className={styles.formGroup}>
-            <label htmlFor="polish">Polish Word:</label>
+            <label htmlFor="polish">Polish Vocabulary:</label>
             <input
               type="text"
               id="polish"
@@ -146,7 +146,7 @@ const ContentManager = () => {
           </div>
           
           <div className={styles.formGroup}>
-            <label htmlFor="english">English Translation:</label>
+            <label htmlFor="english">Meaning:</label>
             <input
               type="text"
               id="english"
@@ -193,9 +193,9 @@ const ContentManager = () => {
           </div>
           
           <div className={styles.recentItems}>
-            <h3>Recently Added Words</h3>
+            <h3>Recently Added Vocabulary</h3>
             {words.length === 0 ? (
-              <p className={styles.noItems}>No words added yet</p>
+              <p className={styles.noItems}>No vocabulary added yet</p>
             ) : (
               <div className={styles.itemsList}>
                 {words.slice(-5).reverse().map((word) => (
@@ -205,7 +205,7 @@ const ContentManager = () => {
                     <span className={styles.itemEnglish}>{word.english}</span>
                   </div>
                 ))}
-                <Link to="/words" className={styles.viewAllLink}>View all words →</Link>
+                <Link to="/words" className={styles.viewAllLink}>View all</Link>
               </div>
             )}
           </div>
@@ -228,7 +228,7 @@ const ContentManager = () => {
           </div>
           
           <div className={styles.formGroup}>
-            <label htmlFor="english-expr">English Translation:</label>
+            <label htmlFor="english-expr">Meaning:</label>
             <textarea
               id="english-expr"
               name="english"
@@ -275,7 +275,7 @@ const ContentManager = () => {
                     <span className={styles.itemEnglish}>{expression.english}</span>
                   </div>
                 ))}
-                <Link to="/expressions" className={styles.viewAllLink}>View all expressions →</Link>
+                <Link to="/expressions" className={styles.viewAllLink}>View all</Link>
               </div>
             )}
           </div>

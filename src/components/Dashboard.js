@@ -55,16 +55,16 @@ const Dashboard = () => {
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
             <div className={styles.statIcon}>📚</div>
-            <div className={styles.statTitle}>Words</div>
+            <div className={styles.statTitle}>Vocabulary</div>
             <div className={styles.statNumber}>{words.length}</div>
-            <Link to="/words" className={styles.statLink}>View all words →</Link>
+            <Link to="/words" className={styles.statLink}>View all</Link>
           </div>
           
           <div className={styles.statCard}>
             <div className={styles.statIcon}>💬</div>
             <div className={styles.statTitle}>Expressions</div>
             <div className={styles.statNumber}>{expressions.length}</div>
-            <Link to="/expressions" className={styles.statLink}>View all expressions →</Link>
+            <Link to="/expressions" className={styles.statLink}>View all</Link>
           </div>
           
           <div className={styles.statCard}>
@@ -81,7 +81,7 @@ const Dashboard = () => {
       <div className={styles.backupSection}>
         <h2>Data Backup / Restore</h2>
         <div className={styles.backupCard}>
-          <p>You can export or import all your learning data (words, expressions, streak, notes, etc.) at once.</p>
+          <p>You can export or import all your learning data at once.</p>
           
           <div className={styles.backupButtons}>
             <button 
@@ -113,10 +113,10 @@ const Dashboard = () => {
         <h2>How Far Can You Go?</h2>
         <div className={styles.quizCards}>
           <div className={styles.quizCard}>
-            <h3>Words Challenge</h3>
-            <p>Test your knowledge on all {words.length} Polish words you've learned</p>
+            <h3>Vocabulary Challenge</h3>
+            <p>Test your knowledge on all {words.length} Polish vocabulary you've learned</p>
             <Link to="/quiz?type=word&mode=all" className="btn btn-primary">
-              Start Words Quiz
+              Start Vocabulary Quiz
             </Link>
           </div>
           
@@ -134,13 +134,13 @@ const Dashboard = () => {
         <h2>Words & Expressions to Review</h2>
         {(wrongAnswers.words.length === 0 && wrongAnswers.expressions.length === 0) ? (
           <div className="card">
-            <p>No difficult words or expressions yet. Take some quizzes to see what you need to practice!</p>
+            <p>Take some quizzes to see what you need to practice!</p>
           </div>
         ) : (
           <div className={styles.reviewCards}>
             {wrongAnswers.words.length > 0 && (
               <div className={styles.reviewCard}>
-                <h3>Difficult Words</h3>
+                <h3>Difficult Vocabulary</h3>
                 <ul className={styles.reviewList}>
                   {wrongAnswers.words.slice(0, 3).map((item, index) => (
                     <li key={index} className={styles.reviewItem}>
@@ -153,7 +153,7 @@ const Dashboard = () => {
                   ))}
                 </ul>
                 <Link to="/quiz?type=word&mode=review" className="btn btn-secondary">
-                  Practice Difficult Words
+                  Practice Difficult Vocabulary
                 </Link>
               </div>
             )}
@@ -185,10 +185,10 @@ const Dashboard = () => {
         <h2>Expand Your Polish Vocabulary</h2>
         <div className={styles.addButtons}>
           <Link to="/content-manager" className="btn btn-primary">
-            Add New Words
+            Add Vocabulary
           </Link>
           <Link to="/content-manager?tab=expression" className="btn btn-primary">
-            Add New Expressions
+            Add Expression
           </Link>
           <Link to="/notes" className="btn btn-secondary">
             View Your Notes
